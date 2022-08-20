@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<style>
+input[type="text"]::placeholder {
+                text-align: center;}
+</style>
+<body style="background-image:url({% static 'film.jpg' %});
+background-size:1400px 620px;background-repeat:no-repeat;" >
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Enter Movie Name"><br>
+    <input type="text" name="desc" placeholder="Enter Movie description"><br>
+    <input type="text" name="year" placeholder="Enter Movie year"><br>
+    <input type="file" name="img"><br>
+    <input type="submit">
+</form>
+</body>
+{% endblock %}

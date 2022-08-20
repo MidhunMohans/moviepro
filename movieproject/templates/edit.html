@@ -1,0 +1,9 @@
+{% load static %}
+<body style="background-image:url({% static 'images1.jpg' %});
+      background-size:1400px 620px;background-repeat:no-repeat;">
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.as_p}}
+  <input type="submit">
+</form>
+</body>

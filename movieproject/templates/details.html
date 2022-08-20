@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<html>
+<body style="background-image:url({% static 'download5.jpg' %});
+      background-size:1400px 620px;background-repeat:no-repeat;">
+<div class="container">
+ <div class="row">
+  <div class="col-md-6">
+    <img src="{{movie.img.url}}">
+  </div>
+ <div class="col-md-6">
+
+ <h3> Movie:{{movie.name}}</h3>
+  <h6>About the Movie:{{movie.desc}}</h6>
+<h5>Year:{{movie.year}}</h5>
+
+  <a class="btn btn-warning" href="{% url 'movieapp:update' movie.id %}"><b style="color:red">Update</b></a>
+<a class="btn btn-danger" href="{% url 'movieapp:delete' movie.id %}"><b>Delete</b></a><br>
+ <a href="https://en.wikipedia.org/wiki/Vikram_(2022_film)"><b style="color:red">Click</b>
+</a>:To know more about Vikram<br>
+<a  href="https://www.netflix.com/title/70044605"><b style="color:red">Click</b></a>
+:To know more about Pursuit of happiness
+ </div>
+
+
+</div>
+
+</div>
+</body>
+</html>
+{% endblock %}
